@@ -73,87 +73,37 @@ class MainActivity : AppCompatActivity() {
 
             if (batteryPct != -1f) {
                 if (isCharging) {
-                    imgView.setImageDrawable(
-                        ResourcesCompat.getDrawable(
-                            context.resources,
-                            R.drawable.battery_charging,
-                            null
-                        )
-                    )
+                    setDrawable(context, R.drawable.battery_charging)
                 } else if (batteryPct == 100f) {
-                    imgView.setImageDrawable(
-                        ResourcesCompat.getDrawable(
-                            context.resources,
-                            R.drawable.battery_full,
-                            null
-                        )
-                    )
+                    setDrawable(context, R.drawable.battery_full)
                 } else if (batteryPct < 100f && batteryPct > 84.5) {
-                    imgView.setImageDrawable(
-                        ResourcesCompat.getDrawable(
-                            context.resources,
-                            R.drawable.battery_6,
-                            null
-                        )
-                    )
+                    setDrawable(context, R.drawable.battery_6)
                 } else if (batteryPct < 84.5 && batteryPct > 67.5) {
-                    imgView.setImageDrawable(
-                        ResourcesCompat.getDrawable(
-                            context.resources,
-                            R.drawable.battery_5,
-                            null
-                        )
-                    )
+                    setDrawable(context, R.drawable.battery_5)
                 } else if (batteryPct < 67.5 && batteryPct > 50.5) {
-                    imgView.setImageDrawable(
-                        ResourcesCompat.getDrawable(
-                            context.resources,
-                            R.drawable.battery_4,
-                            null
-                        )
-                    )
+                    setDrawable(context, R.drawable.battery_4)
                 } else if (batteryPct < 50.5 && batteryPct > 33.5) {
-                    imgView.setImageDrawable(
-                        ResourcesCompat.getDrawable(
-                            context.resources,
-                            R.drawable.battery_3,
-                            null
-                        )
-                    )
+                    setDrawable(context, R.drawable.battery_3)
                 } else if (batteryPct < 33.5 && batteryPct > 16.5) {
-                    imgView.setImageDrawable(
-                        ResourcesCompat.getDrawable(
-                            context.resources,
-                            R.drawable.battery_2,
-                            null
-                        )
-                    )
+                    setDrawable(context, R.drawable.battery_2)
                 } else if (batteryPct < 16.5 && batteryPct > 5f) {
-                    imgView.setImageDrawable(
-                        ResourcesCompat.getDrawable(
-                            context.resources,
-                            R.drawable.battery_1,
-                            null
-                        )
-                    )
+                    setDrawable(context, R.drawable.battery_1)
                 } else if (batteryPct < 5f && batteryPct > 0f) {
-                    imgView.setImageDrawable(
-                        ResourcesCompat.getDrawable(
-                            context.resources,
-                            R.drawable.battery_caution,
-                            null
-                        )
-                    )
+                    setDrawable(context, R.drawable.battery_caution)
                 } else {
-                    imgView.setImageDrawable(
-                        ResourcesCompat.getDrawable(
-                            context.resources,
-                            R.drawable.battery_empty,
-                            null
-                        )
-                    )
+                    setDrawable(context, R.drawable.battery_empty)
                 }
             }
+        }
+
+        private fun setDrawable(context: Context, drawable: Int) {
+            imgView.setImageDrawable(
+                ResourcesCompat.getDrawable(
+                    context.resources,
+                    drawable,
+                    null
+                )
+            )
         }
     }
 }
